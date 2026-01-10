@@ -63,7 +63,7 @@ export default function App() {
       {/* <Product />
 <hr></hr> */}
 
-      <ProductUseff />
+      {/* <ProductUseff /> */}
 
       {/* <hr></hr>
      
@@ -93,7 +93,7 @@ export default function App() {
       {/* <CompAcontextApi />
       <CompB />
 <hr></hr> */}
-{/* <GroceryList /> */}
+<GroceryList />
       </CounterProvider>
     </div>
   )
