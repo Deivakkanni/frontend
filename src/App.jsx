@@ -37,8 +37,8 @@ export default function App() {
 
   return (
     <div>
-      <CounterProvider>
-            <h1>Name: Deivakanni V - 9 AM Batch</h1>
+      <h1>Name: Deivakanni V </h1>
+      <CounterProvider>           
 
       {/*{hide && <button onClick={handlefalse}>Log out</button> }
        {hide ? <UsEffect /> :"Loged out please login"}
@@ -55,15 +55,16 @@ export default function App() {
 <hr></hr>
 
 <Array />
-<hr></hr>*/}
+<hr></hr>
 
 <Apidata />
-<hr></hr> 
+<hr></hr> */}
 
       {/* <Product />
 <hr></hr> */}
 
-      {/* <ProductUseff /> */}
+      <ProductUseff />
+
       {/* <hr></hr>
      
 {/* <Object /> */}
