@@ -1,5 +1,5 @@
 import Apidata from './component/Apidata'
-import Count from './component/count'
+import Count from './component/Count'
 import React, { useState } from 'react'
 import Product from './component/Product'
 import Name from './component/Name'
