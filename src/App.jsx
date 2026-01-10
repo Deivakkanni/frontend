@@ -37,9 +37,9 @@ export default function App() {
 
   return (
     <div>
-       <h1>Name: Deivakanni V - 9 AM Batch</h1>
       <CounterProvider>
-     
+            <h1>Name: Deivakanni V - 9 AM Batch</h1>
+
       {/*{hide && <button onClick={handlefalse}>Log out</button> }
        {hide ? <UsEffect /> :"Loged out please login"}
 
@@ -92,7 +92,7 @@ export default function App() {
       {/* <CompAcontextApi />
       <CompB />
 <hr></hr> */}
-<GroceryList />
+{/* <GroceryList /> */}
       </CounterProvider>
     </div>
   )
