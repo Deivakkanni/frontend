@@ -1,4 +1,4 @@
-import Apidata from './component/apidata'
+import Apidata from './component/Apidata'
 import Count from './component/count'
 import React, { useState } from 'react'
 import Product from './component/Product'
@@ -55,10 +55,10 @@ export default function App() {
 <hr></hr>
 
 <Array />
-<hr></hr>
+<hr></hr>*/}
 
 <Apidata />
-<hr></hr> */}
+<hr></hr> 
 
       {/* <Product />
 <hr></hr> */}
