@@ -37,7 +37,7 @@ export default function App() {
 
   return (
     <div>
-      <h1>Name: Deivakanni V </h1>
+      {/* <h1>Name: Deivakanni V </h1> */}
       <CounterProvider>           
 
       {/*{hide && <button onClick={handlefalse}>Log out</button> }
@@ -63,7 +63,7 @@ export default function App() {
       {/* <Product />
 <hr></hr> */}
 
-      {/* <ProductUseff /> */}
+      <ProductUseff />
 
       {/* <hr></hr>
      
@@ -93,7 +93,7 @@ export default function App() {
       {/* <CompAcontextApi />
       <CompB />
 <hr></hr> */}
-<GroceryList />
+{/* <GroceryList /> */}
       </CounterProvider>
     </div>
   )
