@@ -1,5 +1,6 @@
 import Apidata from './component/Apidata'
 import Count from './component/Count'
+import './App.css'
 import React, { useState } from 'react'
 import Product from './component/Product'
 import Name from './component/Name'
@@ -17,36 +18,41 @@ import CompAcontextApi from './component/CompAcontextApi'
 import { CounterProvider } from './component/context/CounterProvider'
 import CompB from './component/CompB'
 import GroceryList from './component/GroceryList'
+import { BrowserRouter, Routes, Route, Link } from 'react-router-dom'
+import Navbar from './component/Navbar'
+import Home from './pages/Home'
 
 
 export default function App() {
+      // useEffect unmounting stage
+      const [hide, setHide] = useState(true);
+      const handlefalse = () => {
+            setHide(false);
+      }
 
-  const [hide, setHide] = useState(true);
-  const handlefalse = () => {
-    setHide(false);
-  }
+      //CompA,CompB
 
-  //CompA,CompB
+      const [name, setName] = useState("Arun");
+      const [count, setCount] = useState(0)
+      const handleadd = (data) => {
+            setCount(count + 1)
+            console.log(data);
+      }
 
-  const [name, setName] = useState("Arun");
-  const [count, setCount] = useState(0)
-  const handleadd = (data) => {
-    setCount(count + 1)
-    console.log(data);
-  }
+      return (
+            <BrowserRouter>
+                  {/* <h1>Name: Deivakanni V </h1> */}
+                  {/* <CounterProvider> */}
 
-  return (
-    <div>
-      {/* <h1>Name: Deivakanni V </h1> */}
-      <CounterProvider>           
+                  {/* {hide ? <UsEffect /> :"Loged out please login"}
+                        {hide && <button onClick={handlefalse}>Log out</button> }  */}
 
-      {/*{hide && <button onClick={handlefalse}>Log out</button> }
-       {hide ? <UsEffect /> :"Loged out please login"}
+                  {/* <hr></hr>
+     {hide? <ProductUseff />:"Loged out please login"}
+           <button onClick={handlefalse}>Log Out</button>   */}
 
-     <hr></hr>
-      <button onClick={handlefalse}>Log Out</button>
-     {hide? <ProductUseff />:"Loged out please login"} */}
-      {/* <hr></hr>
+
+                  {/* <hr></hr>
 
 <Count />
 <hr></hr>
@@ -60,43 +66,65 @@ export default function App() {
 <Apidata />
 <hr></hr> */}
 
-      {/* <Product />
+                  {/* <Product />
 <hr></hr> */}
 
-      <ProductUseff />
+                  {/* <ProductUseff /> */}
 
-      {/* <hr></hr>
+                  {/* <hr></hr>
      
 {/* <Object /> */}
-      {/* <hr></hr>
+                  {/* <hr></hr>
     
 {/* <Formone />
 <hr></hr> */}
 
-      {/* <Formtwo /> 
+                  {/* <Formtwo /> 
 <hr></hr>*/}
 
-      {/* <Practice /> 
-<hr></hr> */}
 
-      {/* <Square />  
+
+                  {/* <Square />  
 <hr></hr>*/}
 
-      {/* <Userefrence /> 
+                  {/* <Userefrence /> 
 <hr></hr>*/}
 
-      {/* <CompA name={name} age={25}/> */}
-      {/* <CompA nm={"Deva"} age={28} count={count}/> */}
-      {/* <CompA count={count} handleadd={handleadd} /> 
+                  {/* <CompA name={name} age={25}/> */}
+                  {/* <CompA nm={"Deva"} age={28} count={count}/> */}
+                  {/* <CompA count={count} handleadd={handleadd} /> 
       <hr></hr>*/}
 
-      {/* <CompAcontextApi />
+                  {/* <CompAcontextApi />
       <CompB />
 <hr></hr> */}
-{/* <GroceryList /> */}
-      </CounterProvider>
-    </div>
-  )
+                  {/* <Link to={"/"}>Home</Link>
+                  <Link to={"/apidata"}>Apidata</Link>
+                  <Link to={"/groceryList"}>GroceryList</Link>
+                  <Link to={"/form"}>Contact Us</Link>
+
+                  <Routes>
+                        <Route element={<ProductUseff />} path='/' />
+                        <Route element={<Apidata />} path='/apidata' />
+                        <Route element={<GroceryList />} path='/groceryList' />
+                        <Route element={<Formtwo />} path='/form' />
+                  </Routes> */}
+
+
+                  {/* <Practice /> 
+                  <hr></hr>*/}
+                  {/* </CounterProvider> */}
+                  {/* <Home /> */}
+                  <Navbar />
+                  <Routes>
+                        <Route element={<Home />} path='/' />
+                        <Route element={<ProductUseff />} path='/productUseff' />
+                        <Route element={<GroceryList />} path='/groceryList' />
+                        <Route element={<Formone />} path='/formone' />
+                        <Route element={<Formtwo />} path='/formtwo' />
+                  </Routes>
+            </BrowserRouter>
+      )
 }
 
 

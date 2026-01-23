@@ -29,34 +29,34 @@ export default function GroceryList() {
         handleget();
     }
 
-    const handledelete = async (id) =>{
-     let api = await axios.delete("http://localhost:3000/todoList/" + id) // delete from backend
-     handleget();
-  }
+    const handledelete = async (id) => {
+        let api = await axios.delete("http://localhost:3000/todoList/" + id) // delete from backend
+        handleget();
+    }
 
-  const handleedit = async (data) =>{
-let apidata = prompt("Edit your item", data.list);
-let body = {
-    id:data.id,
-    list: apidata
-}
-     let api = await axios.put("http://localhost:3000/todoList/" + data.id, body) 
-     handleget();
-      }
+    const handleedit = async (data) => {
+        let apidata = prompt("Edit your item", data.list);
+        let body = {
+            id: data.id,
+            list: apidata
+        }
+        let api = await axios.put("http://localhost:3000/todoList/" + data.id, body)
+        handleget();
+    }
 
     return (
         <div>
             <h1>Grocery List</h1>
             <input onChange={handleitem} placeholder='Enter your items' />
-            
+
             <button onClick={handleadd} type="button" class="btn btn-primary ms-3">Add {" "}</button>
             {
                 list.map((da, i) => (
                     <div key={i}>
                         <h4>{i + 1}. {da.list}</h4>
-                        <button onClick={()=>handleedit(da)} type="button" class="btn btn-secondary ms-3">edit {" "}</button>
-                        <button onClick={()=> handledelete(da.id)} type="button" class="btn btn-danger ms-3">delete</button>
-                         {/* with function () data automatically can access, so we add arrow function */}
+                        <button onClick={() => handleedit(da)} type="button" class="btn btn-secondary ms-3">edit {" "}</button>
+                        <button onClick={() => handledelete(da.id)} type="button" class="btn btn-danger ms-3">delete</button>
+                        {/* with function () data automatically can access, so we add arrow function */}
                     </div>
 
                 ))

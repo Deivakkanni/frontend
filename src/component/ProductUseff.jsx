@@ -15,11 +15,11 @@ export default function ProductUseff(){
     }
 
     useEffect(() => {
-        api();
+        api(); // mounting
         return () => {
-            console.log("Session log out");
-        }
-    })
+            console.log("Session log out"); // unmounting
+        } 
+    },[prouseeff]) // updating
     return (
         <div>
             <h1>Product Display using Use Effect</h1>
