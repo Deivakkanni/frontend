@@ -36,7 +36,6 @@ export default function Home() {
             setcurrent(current - 1);
         }
     }
-
     const rightslider = () => {
         setcurrent((current + 1) % slider.length)
     }
