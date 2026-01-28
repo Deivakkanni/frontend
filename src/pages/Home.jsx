@@ -47,8 +47,8 @@ export default function Home() {
             <div className="caption">
                 <h1>{slider[current].title}</h1>
             </div>
-            <button className="prev" onClick={leftbutton}>&lt;</button>
-            <button className="next" onClick={rightslider}>&gt;</button>
+            <button className="prev" onClick={leftbutton}>&#10094;</button>
+            <button className="next" onClick={rightslider}>&#10095;</button>
 
         </div>
     )
