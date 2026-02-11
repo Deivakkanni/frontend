@@ -15,7 +15,7 @@ export default function Footer() {
                         </div>
                         <div className="col-md-6 mb-1">
                             <ul className="foot">
-                                <li><Link className="nav-link active" aria-current="page" to={"/"}>Home</Link>
+                                <li><Link className="nav-link" aria-current="page" to={"/"}>Home</Link>
                                 </li>
                                 <li><Link className="nav-link" to={"/movielist"}>Movie List</Link></li>
                                 <li><Link className="nav-link" to={"/groceryList"}>Grocery List</Link></li>
