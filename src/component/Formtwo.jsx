@@ -19,7 +19,7 @@ export default function Formtwo() {
                 <br />
                 <label>Age:</label>
                 <input {...register("age", {
-                    
+
                     required: "Age is requied",
                     min: { value: 1, message: "Age must be at least 1" },
                     max: { value: 60, message: "Age must be below 60" }

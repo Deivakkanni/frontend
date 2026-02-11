@@ -19,12 +19,16 @@ export default function Navbar() {
                         <li className="nav-item">
                             <Link className="nav-link" to={"/groceryList"}>Grocery List</Link>
                         </li>
+
                         <li className="nav-item dropdown">
                             <Link className="nav-link dropdown-toggle" role="button" data-bs-toggle="dropdown" aria-expanded="false" to={""}>Forms</Link>
                             <ul className="dropdown-menu">
                                 <li><Link className="dropdown-item" to={"/formone"}>Form One</Link></li>
                                 <li><Link className="dropdown-item" to={"/formtwo"}>Form two</Link></li>
                             </ul>
+                        </li>
+                        <li className="nav-item">
+                            <Link className="nav-link" to={"/login"}>Login</Link>
                         </li>
 
                     </ul>

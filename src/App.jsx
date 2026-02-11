@@ -21,6 +21,8 @@ import GroceryList from './component/GroceryList'
 import { BrowserRouter, Routes, Route, Link } from 'react-router-dom'
 import Navbar from './component/Navbar'
 import Home from './pages/Home'
+import Login from './component/Login'
+import Dashboard from './component/Dashboard'
 
 
 export default function App() {
@@ -79,8 +81,8 @@ export default function App() {
 {/* <Formone />
 <hr></hr> */}
 
-                  {/* <Formtwo /> 
-<hr></hr>*/}
+                  {/* <Formtwo />
+                  <hr></hr> */}
 
 
 
@@ -115,6 +117,8 @@ export default function App() {
                   <hr></hr>*/}
                   {/* </CounterProvider> */}
                   {/* <Home /> */}
+                  {/* <Login /> */}
+
                   <Navbar />
                   <Routes>
                         <Route element={<Home />} path='/' />
@@ -122,7 +126,12 @@ export default function App() {
                         <Route element={<GroceryList />} path='/groceryList' />
                         <Route element={<Formone />} path='/formone' />
                         <Route element={<Formtwo />} path='/formtwo' />
+                        <Route element={<Login />} path='/login' />
+
+                        <Route element={<Dashboard />} path='/dashboard' />
+
                   </Routes>
+
             </BrowserRouter>
       )
 }

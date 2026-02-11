@@ -1,24 +1,32 @@
 import axios from "axios";
 import React, { useState } from "react";
 import { useForm } from "react-hook-form";
+import { useNavigate } from "react-router-dom";
+
 
 export default function () {
 
     const { handleSubmit, register, formState: { errors } } = useForm();
-    const handledata = (data) => {
-        // fake backend response
-        const response = {
-            token: "dummy-jwt-token-123"
-        };
+    const navigate = useNavigate();
 
-        console.log("Login Success:", response);
-
-        // store token
-        if (response.token) {
-            localStorage.setItem("token", response.token);
-            window.location.href = "/dashboard";
+    const handledata = async (da) => {
+        try {
+            const response = await axios.post("http://localhost:5000/login",
+                {
+                    email: da.mail,
+                    password: da.pass
+                }
+            );
+            localStorage.setItem("token", response.data.token);
+            console.log("Login successfull", response.data);
+            alert("Login successfull");
+            navigate("/dashboard");
         }
-    };
+        catch (error) {
+            // console.log(error.response?.data?.message || error.message);
+            alert("Login failed");
+        }
+    }
 
 
     // const [apidata, setapidata] = useState();

@@ -1,20 +1,23 @@
 import React, { useEffect, useState } from "react";
+import banner1 from "../assets/banner1.jpg"
+import banner2 from "../assets/banner2.jpg"
+import banner3 from "../assets/banner3.jpg"
 
 const slider = [
     {
         id: 1,
         title: "Slider 1",
-        img: "https://mir-s3-cdn-cf.behance.net/project_modules/fs/094441140430173.6241cc21ecb53.jpg"
+        img: banner1
     },
     {
         id: 2,
         title: "Slider 2",
-        img: "https://karkitechs.com/wp-content/uploads/2024/08/20compressed-1-scaled.jpg"
+        img: banner2
     },
     {
         id: 3,
         title: "Slider 3",
-        img: "https://images.filmibeat.com/ph-big/2014/09/aranmanai-movie-poster_141026108860.jpg"
+        img: banner3
     }
 ];
 export default function Home() {
@@ -40,15 +43,96 @@ export default function Home() {
         setcurrent((current + 1) % slider.length)
     }
 
-    return (
-        <div className="slider">
-            <img src={slider[current].img} />
-            <div className="caption">
-                <h1>{slider[current].title}</h1>
-            </div>
-            <button className="prev" onClick={leftbutton}>&#10094;</button>
-            <button className="next" onClick={rightslider}>&#10095;</button>
+    const [movie, setmovie] = useState([])
 
-        </div>
+    const handlemovie = async () => {
+        let fetchapi = await fetch("https://fooapi.com/api/movies");
+        let apidata = await fetchapi.json();
+        setmovie(apidata.data.slice(0, 6))
+        console.log(apidata);
+    }
+
+    useEffect(() => {
+        handlemovie();
+
+        return () => {
+            console.log("Dead");
+        }
+    }, [])
+    return (
+        <>
+            <div className="slider">
+                <img src={slider[current].img} />
+                <div className="caption">
+                    <h1>{slider[current].title}</h1>
+                </div>
+                <button className="prev" onClick={leftbutton}>&#10094;</button>
+                <button className="next" onClick={rightslider}>&#10095;</button>
+
+            </div>
+            <div className="movi">
+                {
+                    movie.map((da) => (
+                        <div>
+                            <div className="container">
+                                <div className="cellphone-container">
+                                    <div className="movie">
+                                        {/* <div className="menu"><i className="material-icons"></i></div> */}
+                                        <div className="movie-img" style={{ background: `url(${da.poster})` }}></div>
+                                        <div className="text-movie-cont">
+                                            <div className="mr-grid">
+                                                <div className="col1">
+                                                    <h4>{da.title}</h4>
+                                                    <ul className="movie-gen">
+                                                        <li>{da.year} / </li>
+
+                                                        <li>{da.runtime}  /</li>
+                                                        <li>{da.genre}</li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                            <div className="mr-grid summary-row">
+                                                <div className="col1">
+                                                    <h5>SUMMARY</h5>
+                                                </div>
+                                                {/* <div className="col2">
+                                                    <ul className="movie-likes">
+                                                        <li><i className="material-icons">&#xE813;</i>124</li>
+                                                        <li><i className="material-icons">&#xE813;</i>3</li>
+                                                    </ul>
+                                                </div> */}
+                                            </div>
+                                            <div className="mr-grid">
+                                                <div className="col1">
+                                                    <p className="movie-description">{da.plot}</p>
+                                                </div>
+                                            </div>
+                                            <div className="mr-grid actors-row">
+                                                <div className="col1">
+                                                    <p className="movie-actors">{da.writer}</p>
+                                                </div>
+                                            </div>
+                                            <div className="mr-grid action-row">
+                                                <div className="col2"><div className="watch-btn"><h6>WATCH TRAILER</h6></div>
+                                                </div>
+                                                {/* <div className="col6 action-btn"><i className="material-icons">&#xE161;</i>
+                                                </div>
+                                                <div className="col6 action-btn"><i className="material-icons">&#xE866;</i>
+                                                </div>
+                                                <div className="col6 action-btn"><i className="material-icons">&#xE80D;</i>
+                                                </div> */}
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            {/* <a href="https://dribbble.com/geehm" target="_blank">
+                                <img className="dribbble-link" src="https://image.flaticon.com/icons/png/512/124/124037.png" />
+                            </a> */}
+
+                        </div>
+                    ))}
+            </div>
+        </>
     )
 }
