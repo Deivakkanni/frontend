@@ -23,6 +23,7 @@ import Navbar from './component/Navbar'
 import Home from './pages/Home'
 import Login from './component/Login'
 import Dashboard from './component/Dashboard'
+import Movielist from './pages/Movielist'
 
 
 export default function App() {
@@ -122,7 +123,8 @@ export default function App() {
                   <Navbar />
                   <Routes>
                         <Route element={<Home />} path='/' />
-                        <Route element={<ProductUseff />} path='/productUseff' />
+                        <Route element={<Movielist />} path='/movielist' />
+                        {/* <Route element={<ProductUseff />} path='/productUseff' /> */}
                         <Route element={<GroceryList />} path='/groceryList' />
                         <Route element={<Formone />} path='/formone' />
                         <Route element={<Formtwo />} path='/formtwo' />

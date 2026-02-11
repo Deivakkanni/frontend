@@ -14,8 +14,11 @@ export default function Navbar() {
                             <Link className="nav-link active" aria-current="page" to={"/"}>Home</Link>
                         </li>
                         <li className="nav-item">
-                            <Link className="nav-link" to={"/productUseff"}>Product</Link>
+                            <Link className="nav-link" to={"/movielist"}>Movie List</Link>
                         </li>
+                        {/* <li className="nav-item">
+                            <Link className="nav-link" to={"/productUseff"}>Product</Link>
+                        </li> */}
                         <li className="nav-item">
                             <Link className="nav-link" to={"/groceryList"}>Grocery List</Link>
                         </li>
