@@ -45,6 +45,25 @@ body {
     z-index: 10
 }
 
+.navbar {
+    padding: 10px 35px !important;
+}
+
+a.navbar-brand {
+    font-size: 30px;
+    border: 1px solid #fff;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+a.nav-link {
+    color: #fff;
+}
+
+a.nav-link.active {
+    font-weight: bold;
+}
+
 .tilt {
     overflow: hidden
 }
@@ -297,6 +316,7 @@ body {
     background-position: center;
     background-size: cover;
     background-repeat: repeat;
+    margin-bottom: 30px;
 }
 
 .container {
@@ -455,4 +475,12 @@ body {
     font-weight: 300;
     color: #e7e7e7;
     font-style: italic;
+}
+
+.foot {
+    display: flex;
+    list-style: none;
+    align-items: center;
+    justify-content: right;
+    gap: 20px;
 }

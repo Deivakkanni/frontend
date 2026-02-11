@@ -24,6 +24,7 @@ import Home from './pages/Home'
 import Login from './component/Login'
 import Dashboard from './component/Dashboard'
 import Movielist from './pages/Movielist'
+import Footer from './component/Footer'
 
 
 export default function App() {
@@ -133,6 +134,7 @@ export default function App() {
                         <Route element={<Dashboard />} path='/dashboard' />
 
                   </Routes>
+                  <Footer />
 
             </BrowserRouter>
       )
