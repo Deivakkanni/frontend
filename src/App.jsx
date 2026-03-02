@@ -25,6 +25,7 @@ import Login from './component/Login'
 import Dashboard from './component/Dashboard'
 import Movielist from './pages/Movielist'
 import Footer from './component/Footer'
+import Countuseeffect from './component/Countuseeffect'
 
 
 export default function App() {
@@ -120,7 +121,7 @@ export default function App() {
                   {/* </CounterProvider> */}
                   {/* <Home /> */}
                   {/* <Login /> */}
-
+                  <Countuseeffect />
                   <Navbar />
                   <Routes>
                         <Route element={<Home />} path='/' />
